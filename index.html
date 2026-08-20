@@ -644,33 +644,34 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:18px;
+    gap:16px;
+    width:fit-content;
     margin:-16px auto 8px;
-    padding:10px 24px;
+    padding:22px 32px 12px;
     background:none;
-    border:none;
+    border:1.5px dashed var(--gold-500);
+    border-radius:18px;
     cursor:pointer;
     -webkit-tap-highlight-color:transparent;
+    transition:background 0.2s ease;
   }
+  .faq-prompt:hover{background:var(--cream-100);}
   .faq-prompt-arrow{
     display:flex;
     align-items:center;
     justify-content:center;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    border:1.5px dashed var(--gold-500);
+    flex:0 0 auto;
     color:var(--gold-600);
-    transition:transform 0.35s ease, background 0.2s ease;
+    transition:transform 0.35s ease;
   }
-  .faq-prompt-arrow .icon{width:17px;height:17px;stroke-width:2;}
-  .faq-prompt:hover .faq-prompt-arrow{background:var(--cream-100);}
+  .faq-prompt-arrow .icon{width:19px;height:19px;stroke-width:2;}
   .faq-prompt.open .faq-prompt-arrow{transform:rotate(180deg);}
   .faq-prompt-text{
     font-family:'Petit Formal Script',cursive;
     font-size:2.4rem;
     color:var(--maroon-800);
     line-height:1;
+    white-space:nowrap;
   }
   .accordion-collapse{
     display:grid;
@@ -925,6 +926,8 @@
     .services,.contact{padding:60px 18px;}
     .area{padding:60px 18px;}
     .form-card{padding:24px;}
+    .faq-prompt{padding:16px 20px 10px; max-width:calc(100vw - 48px);}
+    .faq-prompt-text{font-size:1.7rem; white-space:normal; text-align:center;}
   }
 </style>
 </head>
