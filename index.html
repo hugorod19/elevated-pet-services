@@ -1285,17 +1285,18 @@
     <div class="form-card">
       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate id="contactForm">
         <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="subject" value="New Booking Request - Elevated Pet Services">
         <p class="hp-field"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
 
         <div class="form-row">
           <div class="field">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
+            <input type="text" id="firstName" name="First name" required>
             <span class="error-msg" id="err-firstName"></span>
           </div>
           <div class="field">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
+            <input type="text" id="lastName" name="Last name" required>
             <span class="error-msg" id="err-lastName"></span>
           </div>
         </div>
@@ -1303,25 +1304,25 @@
         <div class="form-row">
           <div class="field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="Phone number" required>
             <span class="error-msg" id="err-phone"></span>
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="Email address" required>
             <span class="error-msg" id="err-email"></span>
           </div>
         </div>
 
         <div class="field">
           <label for="petName">Pet's Name</label>
-          <input type="text" id="petName" name="petName" required>
+          <input type="text" id="petName" name="Pet's name" required>
           <span class="error-msg" id="err-petName"></span>
         </div>
 
         <div class="field">
           <label for="petType">Pet Type</label>
-          <select id="petType" name="petType" required>
+          <select id="petType" name="Pet type" required>
             <option value="">Select a pet type</option>
             <option>Dog</option>
             <option>Cat</option>
@@ -1335,7 +1336,7 @@
 
         <div class="field">
           <label for="service">Service Interested In</label>
-          <select id="service" name="service" required>
+          <select id="service" name="Service needed" required>
             <option value="">Select a service</option>
             <option>Dog Walking</option>
             <option>Drop-In Visits</option>
@@ -1348,7 +1349,7 @@
 
         <div class="field">
           <label for="message">Tell us about your pet</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <textarea id="message" name="Message" rows="4" required></textarea>
           <span class="error-msg" id="err-message"></span>
         </div>
 
