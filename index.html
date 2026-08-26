@@ -1289,21 +1289,48 @@
 
         <div class="form-row">
           <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <span class="error-msg" id="err-name"></span>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <span class="error-msg" id="err-firstName"></span>
           </div>
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <span class="error-msg" id="err-lastName"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
           <div class="field">
             <label for="phone">Phone</label>
             <input type="tel" id="phone" name="phone" required>
             <span class="error-msg" id="err-phone"></span>
           </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-msg" id="err-email"></span>
+          </div>
         </div>
 
         <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-          <span class="error-msg" id="err-email"></span>
+          <label for="petName">Pet's Name</label>
+          <input type="text" id="petName" name="petName" required>
+          <span class="error-msg" id="err-petName"></span>
+        </div>
+
+        <div class="field">
+          <label for="petType">Pet Type</label>
+          <select id="petType" name="petType" required>
+            <option value="">Select a pet type</option>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Rabbit</option>
+            <option>Guinea Pig</option>
+            <option>Bird</option>
+            <option>Reptile</option>
+          </select>
+          <span class="error-msg" id="err-petType"></span>
         </div>
 
         <div class="field">
@@ -1555,8 +1582,11 @@
   function validateField(field){
     var el = document.getElementById(field);
     var val = el.value.trim();
-    if(field === 'name'){
-      if(!val){ showError('name','Please enter your name.'); return false; }
+    if(field === 'firstName'){
+      if(!val){ showError('firstName','Please enter your first name.'); return false; }
+    }
+    if(field === 'lastName'){
+      if(!val){ showError('lastName','Please enter your last name.'); return false; }
     }
     if(field === 'phone'){
       var phoneRe = /^[\d\s\-\+\(\)]{7,}$/;
@@ -1565,6 +1595,12 @@
     if(field === 'email'){
       var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if(!val || !emailRe.test(val)){ showError('email','Please enter a valid email address.'); return false; }
+    }
+    if(field === 'petName'){
+      if(!val){ showError('petName',"Please enter your pet's name."); return false; }
+    }
+    if(field === 'petType'){
+      if(!val){ showError('petType','Please choose a pet type.'); return false; }
     }
     if(field === 'service'){
       if(!val){ showError('service','Please choose a service.'); return false; }
@@ -1576,7 +1612,7 @@
     return true;
   }
 
-  ['name','phone','email','service','message'].forEach(function(field){
+  ['firstName','lastName','phone','email','petName','petType','service','message'].forEach(function(field){
     var el = document.getElementById(field);
     el.addEventListener('input', function(){ validateField(field); });
     el.addEventListener('change', function(){ validateField(field); });
@@ -1585,7 +1621,7 @@
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var fields = ['name','phone','email','service','message'];
+      var fields = ['firstName','lastName','phone','email','petName','petType','service','message'];
       var valid = true;
       fields.forEach(function(field){
         if(!validateField(field)){ valid = false; }
